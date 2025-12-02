@@ -82,7 +82,7 @@ export function generateContractCore(
 
     // 3. Determine project location
     const projectRoot = options.directory
-      ? `${options.directory}/${projectName}`
+      ? `${options.directory}/${nameVariants.fileName}`
       : `${workspaceConfig.librariesRoot}/contract/${nameVariants.fileName}`
 
     const sourceRoot = `${projectRoot}/src`
