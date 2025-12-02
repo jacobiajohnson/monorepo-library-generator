@@ -88,7 +88,12 @@ export default async function contractGenerator(
     ...(entities && { entities }),
     includeCQRS: schema.includeCQRS ?? false,
     includeRPC: schema.includeRPC ?? false,
-    workspaceRoot: tree.root
+    workspaceRoot: tree.root,
+    // Pass pre-computed paths from Nx normalization to avoid double generation
+    projectName: options.projectName,
+    projectRoot: options.projectRoot,
+    packageName: options.packageName,
+    sourceRoot: options.sourceRoot
   }
 
   // 3. Run core generator with Effect runtime
